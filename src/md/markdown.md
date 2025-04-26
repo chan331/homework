@@ -222,19 +222,19 @@
     **결과**  
     `console.log('hello')`
 
-    `(백틱)으로 양옆을 감싸는 경우 한 줄 짜리 코드 블록이 생성
+    백틱으로 양옆을 감싸는 경우 한 줄 짜리 코드 블록이 생성
 
     ---
 
     - 여러 줄 코드 블록
 
-    ```markdown
+    ````markdown
     ```javascript
     function greet() {
     console.log("Hello, Markdown!");
     }
     ```
-    ```
+    ````
 
     **결과**
 
@@ -243,7 +243,7 @@
     console.log("Hello, Markdown!");
     }
     ```
-    `(백틱)을 세 개 연달아 작성시 여러 줄의 코드를 작성할 수 있는 코드 블록을 생성 
+    백틱을 세 개 연달아 작성시 여러 줄의 코드를 작성할 수 있는 코드 블록을 생성 
     ---
 
     ### 2.8 인용문(Blockquote)
@@ -514,4 +514,5 @@
     - [Tailwind CSS 공식 문서](https://tailwindcss.com/docs)
 
     ---
+    ```
 
