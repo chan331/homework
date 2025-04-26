@@ -129,20 +129,6 @@ __이것도 굵게__
 
 ---
 
-### 2.6 이미지(Images)
-
-> 설명을 돕거나 분위기를 살릴 때 사용합니다.
-
-```markdown
-![깃허브 로고](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
-```
-[]이 부분은 img태그의 alt로 ()이 부분은 img태그의 src로 이해하면 좋음.
-
-**결과**  
-![깃허브 로고](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
-
----
-
 ## 2.6 이미지(Images)
 
 ### 기본 이미지 삽입
