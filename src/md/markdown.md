@@ -300,13 +300,6 @@ function greet() {
 
 > 할 일 목록이나 계획을 표시할 때 유용합니다.
 
-- [x] 마크다운 기본 학습
-- [x] 예시 문서 작성
-- [ ] 과제 제출
-- [ ] 복습하기
-
-**결과**
-
 ```markdown
 - [x] 마크다운 기본 학습
 - [x] 예시 문서 작성
@@ -314,6 +307,12 @@ function greet() {
 - [ ] 복습하기
 ```
 
+**결과**
+
+- [x] 마크다운 기본 학습
+- [x] 예시 문서 작성
+- [ ] 과제 제출
+- [ ] 복습하기
 
 ---
 
@@ -349,7 +348,7 @@ function greet() {
 
 | 구분        | 사용 기술 |
 |:------------|:----------|
-| Frontend    | Next.js 15, React 18, TypeScript, Tailwind CSS |
+| Frontend    | Next.js 15, React 19, TypeScript, Tailwind CSS |
 | Backend(API) | Supabase |
 | Deploy      | Vercel |
 | 상태 관리    | React Query(TanStack Query), Zustand |
