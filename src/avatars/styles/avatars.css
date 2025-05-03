@@ -1,1 +1,51 @@
 /* 여기에 스타일을 구현해 주세요 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.avatar-container {
+  width :557px;
+  padding: 100px;
+  background-color: #ffffff;
+}
+
+.avatar-list {
+  width: 356px;
+  margin: 10px;
+  list-style: none;
+}
+
+.avatar {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  margin: 10px;
+}
+
+.avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.avatar::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  background-color: #dbdbdb;
+}
+
+.avatar--online::after {
+  background-color: #4cfe88;
+}
