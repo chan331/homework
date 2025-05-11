@@ -115,28 +115,32 @@ body {
   color: var(--color-error);
 }
 
-/* invalid 상태이거나 form:invalid 일 때 에러 보이기 */
-form:invalid .form-error {
+input:user-invalid + .form-error {
   display: block;
 }
 
 /* 로그인 버튼 */
-.login-component main button[type='submit'] {
+.login-component main button {
   width: 100%;
   height: 45px;
   padding: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: var(--color-primary);
   color: var(--color-white);
   border: none;
+  text-align: center;
   border-radius: 4px;
   font-size: var(--font-size-base);
   font-weight: 500;
   cursor: pointer;
   margin-top: 2rem;
 }
+
 .login-component main button:focus-visible {
   outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
+  outline-offset: 1px;
 }
 
 /* FOOTER */
@@ -160,14 +164,6 @@ form:invalid .form-error {
   font-weight: bold;
 }
 
-/* 체크박스 숨기기 */
-.custom-login-checkbox,
-.custom-ip-secure-checkbox {
-  opacity: 0;
-  width: 0px;
-  height: 0px;
-}
-
 .footer-options label div {
   display: flex;
   justify-content: center;
@@ -176,62 +172,40 @@ form:invalid .form-error {
   height: 24px;
 }
 
+/* 로그인 옵션 */
+.custom-login-checkbox {
+  appearance: none;
+  background-image: url('./unchecked.svg');
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.custom-login-checkbox:checked {
+  background-image: url('./checked.svg');
+}
+
 /* 모바일 IP 보안 제거 */
 .ip-secure-container {
   display: none;
 }
 
-/* 로그인 옵션: 첫 번째div = unchecked, 두 번째div = checked  */
-/* 체크 안 됐을 때 언체크 아이콘 보이기 */
-.footer-options label div:nth-of-type(1) {
-  display: inline-block;
+.custom-ip-secure-checkbox {
+  appearance: none;
+  position: absolute;
+  width: 1.7rem;  
+  height: 1rem;
+  cursor: pointer;
 }
 
-.footer-options label div:nth-of-type(2) {
-  display: none;
+.custom-ip-secure-checkbox:not(:checked) + span::before {
+  content: 'OFF';
+  color: var(--color-primary);
 }
 
-/* 체크 됐을 때 체크 아이콘 보이기 */
-.custom-login-checkbox:checked + div:nth-of-type(1) {
-  display: none;
-}
-
-.custom-login-checkbox:checked + div:nth-of-type(1) + div:nth-of-type(2) {
-  display: inline-block;
-}
-
-/* IP 보안: 첫 번째 span = unchecked, 두 번째 span = checked */
-/* 체크 안 됐을 때 언체크 아이콘 보이기 */
-.footer-options label span:nth-of-type(1) {
-  display: inline-block;
-}
-
-.footer-options label span:nth-of-type(2) {
-  display: none;
-}
-
-/* 체크 됐을 때 체크 아이콘 보이기 */
-.custom-ip-secure-checkbox:checked + span:nth-of-type(1) {
-  display: none;
-}
-.custom-ip-secure-checkbox:checked + span:nth-of-type(1) + span:nth-of-type(2) {
-  display: inline-block;
-}
-
-/* 로그인 옵션 - 포커스 링 (키보드 탭 시 시각화) */
-.custom-login-checkbox:focus-visible + *,
-.custom-login-checkbox:focus-visible + * + * {
-  outline: 3px solid var(--color-primary);
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-}
-
-/* IP 보안 - 포커스 링 (키보드 탭 시 시각화) */
-.custom-ip-secure-checkbox:focus-visible + *,
-.custom-ip-secure-checkbox:focus-visible + * + * {
-  outline: 2px solid var(--color-primary);
-  border-radius: 2px;
+.custom-ip-secure-checkbox:checked + span::before {
+  content: 'ON';
+  color: var(--color-text-secondary);
 }
 
 /* 반응형 */
@@ -256,15 +230,15 @@ form:invalid .form-error {
 
   .ip-secure-container > a {
     text-decoration: none;
-    padding-right: 5px;
+    margin-right: 5px;
     color: var(--color-text-secondary);
   }
 
   .ip-secure-container > a,
   .footer-options label span {
-    display: inline-block; 
-    line-height: 1; 
-    vertical-align: middle; 
+    display: inline-block;
+    line-height: 1;
+    vertical-align: middle;
     font-weight: bold;
   }
 }
