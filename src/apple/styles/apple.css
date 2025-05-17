@@ -1,0 +1,95 @@
+@import "./card-component.css";
+
+/* 카드 레이아웃 */
+.layout {
+    background: white;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 15px;
+}
+
+.layout > .card:nth-child(1) {
+  background-image: -webkit-image-set(
+    url("/src/apple/products/ipad_pro.jpeg") 1x,
+    url("/src/apple/products/ipad_pro_2x.jpeg") 2x
+  );
+ 
+}
+
+.layout > .card:nth-child(2) {
+  background-image: -webkit-image-set(
+    url("/src/apple/products/ipad_air.jpeg") 1x,
+    url("/src/apple/products/ipad_air_2x.jpeg") 2x
+  );
+}
+
+.layout > .card:nth-child(3) {
+  background-image: -webkit-image-set(
+    url("/src/apple/products/iphone15_pro.jpeg") 1x,
+    url("/src/apple/products/iphone15_pro_2x.jpeg") 2x
+  );
+}
+
+.layout > .card:nth-child(4) {
+  background-image: -webkit-image-set(
+    url("/src/apple/products/iphone15.jpeg") 1x,
+    url("/src/apple/products/iphone15_2x.jpeg") 2x
+  );
+}
+
+.layout > .card:nth-child(5) {
+  background-image: -webkit-image-set(
+    url("/src/apple/products/apple_watch.jpeg") 1x,
+    url("/src/apple/products/apple_watch_2x.jpeg") 2x
+  );
+}
+
+.layout > .card:nth-child(6) {
+  background-image: -webkit-image-set(
+    url("/src/apple/products/macbook_air.jpeg") 1x,
+    url("/src/apple/products/macbook_air_2x.jpeg") 2x
+  );
+}
+
+.layout > .card:nth-child(7) {
+  background-image: -webkit-image-set(
+    url("/src/apple/products/airpods_pro.jpeg") 1x,
+    url("/src/apple/products/airpods_pro_2x.jpeg") 2x
+  );
+}
+
+
+/* 데스크탑(≥1024px) */
+@media (min-width: 1024px) {
+  .layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .layout > .card:nth-child(-n+3) {
+    grid-column: span 2;
+  }
+
+  /* 1~3번째 카드만 와이드 버전으로 */
+  .layout > .card:nth-child(1) {
+    background-image: -webkit-image-set(
+        url("/src/apple/products/ipad_pro_wide.jpeg") 1x,
+        url("/src/apple/products/ipad_pro_wide_2x.jpeg") 2x
+    );
+  }
+
+  .layout > .card:nth-child(2) {
+    background-image: -webkit-image-set(
+      url("/src/apple/products/ipad_air_wide.jpeg") 1x,
+      url("/src/apple/products/ipad_air_wide_2x.jpeg") 2x
+    );
+  }
+
+  .layout > .card:nth-child(3) {
+    background-image: -webkit-image-set(
+      url("/src/apple/products/iphone15_pro_wide.jpeg") 1x,
+      url("/src/apple/products/iphone15_pro_wide_2x.jpeg") 2x
+    );
+  }
+}

@@ -1,0 +1,109 @@
+@import './reset.css';
+@import './theme.css';
+@import './base.css';
+
+.card {
+  color: var(--white);
+  width: 100%;
+  height: var(--size);
+  background-image: url(/src/apple/products/ipad_pro_2x.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  row-gap: var(--small-spacing);
+}
+
+/* 짝수 번째 카드의 텍스트 색 */
+.card:nth-of-type(even) {
+  color: var(--black);
+}
+
+.info-container {
+  margin-top: var(--large-spacing);
+}
+
+.title {
+  text-align: center;
+  font-size: var(--large-text);
+  font-weight: bold;
+}
+
+.sub-title {
+  margin-top: var(--small-spacing);
+}
+
+p {
+  text-align: center;
+  font-size: var(--base-text);
+}
+
+span {
+  display: block;
+  text-align: center;
+  margin-top: var(--small-spacing);
+  color: var(--gray);
+}
+
+/* 기본 버튼 스타일 */
+.button-container {
+  margin-top: var(--x-small-spacing);
+  display: flex;
+  justify-content: center;
+  column-gap: var(--base-spacing);
+}
+
+.button-container .btn {
+  cursor: pointer;
+  color: var(--blue-200);
+  background: none;
+  border: 1px solid var(--blue-200);
+  font-size: var(--xx-small-text);
+  border-radius: 20px;
+  padding-inline: var(--small-spacing);
+  padding-block: var(--x-small-spacing);
+}
+
+.button-container .btn:hover {
+  background: var(--blue-200);
+  color: var(--white);
+}
+
+/* 짝수번째 카드 버튼 색상 */
+.card:nth-of-type(even) .btn {
+  color: var(--black);
+  border-color: var(--black);
+}
+
+.card:nth-of-type(even) .btn:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+@media (min-width: 1024px) {
+  .info-container {
+    margin-top: var(--extra-large-spacing);
+  }
+
+  .title {
+    text-align: center;
+    font-size: var(--extra-large-text);
+    font-weight: bold;
+  }
+
+  .sub-title {
+    display: flex;
+    column-gap: 4px;
+  }
+
+  p {
+    font-size: var(--medium-text);
+  }
+
+  .button-container .btn {
+    font-size: var(--x-small-text);
+  }
+}
