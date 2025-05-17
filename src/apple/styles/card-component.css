@@ -6,7 +6,7 @@
   color: var(--white);
   width: 100%;
   height: var(--size);
-  background-image: url(/src/apple/products/ipad_pro_2x.jpeg);
+  background-image: url('../products/ipad_pro_wide_2x.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
